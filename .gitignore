@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+env/
+
+# Environment / secrets (never commit)
+.env
+.env.*
+*.pem
+*.key
+secrets/
+api keys/
+
+# Logs & temp
+*.log
+logs/
+tmp/
+temp/
+
+# Local databases & media
+*.db
+*.sqlite
+*.sqlite3
+media/
+downloads/
+uploads/
