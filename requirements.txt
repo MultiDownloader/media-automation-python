@@ -35,3 +35,22 @@ httpx-mock>=0.11.0
 # Type checking
 mypy>=1.8.0
 types-requests>=2.31.0
+
+# ---------------------------------------------------------------------------
+# Optional: scraping stack (python/scraper/)
+# The package imports these lazily -- without them the HTTP tier, parsers
+# (stdlib fallback) and in-memory cache still work; browser tiers report
+# "tier unavailable" instead of crashing. See python/scraper/README.md.
+# ---------------------------------------------------------------------------
+beautifulsoup4>=4.12.0
+playwright>=1.44.0        # browser tier: interception, ad/popup blocking, media sniffing
+selenium>=4.20.0          # last-resort tier
+
+# ---------------------------------------------------------------------------
+# Optional: queue workers (python/queue_workers/)
+# Without these the inline executor + in-memory DLQ/idempotency cache are
+# used. With them: celery workers over Redis for scale-out.
+# See python/queue_workers/README.md and docker-compose.queue.yml.
+# ---------------------------------------------------------------------------
+celery>=5.3.0
+redis>=5.0.0

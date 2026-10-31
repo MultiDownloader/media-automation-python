@@ -30,3 +30,7 @@ temp/
 media/
 downloads/
 uploads/
+
+# Type checker
+.mypy_cache/
+
